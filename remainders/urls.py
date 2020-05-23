@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import remainder_list, remainder_detail
+from .views import RemainderAPIView, RemainderDetailsAPIView
 
 urlpatterns = [
-    path('remainders/', remainder_list),
-    path('remainders/<int:pk>', remainder_detail)
+    path('remainders/', RemainderAPIView.as_view()),
+    path('remainders/<int:pk>', RemainderDetailsAPIView.as_view())
 ]
